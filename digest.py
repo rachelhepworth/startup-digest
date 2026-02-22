@@ -18,21 +18,20 @@ APP_PASSWORD    = os.environ["GMAIL_APP_PASSWORD"]
 ANTHROPIC_KEY   = os.environ["ANTHROPIC_API_KEY"]
 
 RSS_FEEDS = [
-    ("TechCrunch",          "https://techcrunch.com/feed/"),
-    ("TechCrunch Startups", "https://techcrunch.com/startups/feed/"),
-    ("Crunchbase News",     "https://news.crunchbase.com/feed/"),
-    ("StrictlyVC",          "https://strictlyvc.com/feed/"),
-    ("VentureBeat",         "https://venturebeat.com/feed/"),
-    ("Fortune",             "https://fortune.com/feed/"),
-    ("Business Insider",    "https://feeds.businessinsider.com/custom/all"),
-    ("Reuters Tech",        "https://feeds.reuters.com/reuters/technologyNews"),
+    ("TechCrunch",       "https://techcrunch.com/feed/"),
+    ("Crunchbase News",  "https://news.crunchbase.com/feed/"),
+    ("StrictlyVC",       "https://strictlyvc.com/feed/"),
+    ("Tech.eu",          "https://tech.eu/feed/"),
+    ("Sifted",           "https://sifted.eu/feed"),
+    ("EU-Startups",      "https://eu-startups.com/feed/"),
+    ("Business Wire",    "https://www.businesswire.com/rss/home/?rss=g7"),
 ]
 
 # Quick keyword pre-filter (keeps Claude costs low)
 FUNDING_KEYWORDS = [
     "series a", "series b", "series c",
-    "raises", "raised", "funding round",
-    "million", "lead investor",
+    "funding round", "lead investor",
+    "raises $", "raised $", "secures $",
 ]
 
 # ── Step 1: Fetch articles from the last 24 h ────────────────────────────────
