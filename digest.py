@@ -18,11 +18,14 @@ APP_PASSWORD    = os.environ["GMAIL_APP_PASSWORD"]
 ANTHROPIC_KEY   = os.environ["ANTHROPIC_API_KEY"]
 
 RSS_FEEDS = [
-    ("TechCrunch",        "https://techcrunch.com/feed/"),
-    ("TechCrunch Startups","https://techcrunch.com/startups/feed/"),
-    ("Crunchbase News",   "https://news.crunchbase.com/feed/"),
-    ("StrictlyVC",        "https://strictlyvc.com/feed/"),
-    ("VentureBeat",       "https://venturebeat.com/feed/"),
+    ("TechCrunch",          "https://techcrunch.com/feed/"),
+    ("TechCrunch Startups", "https://techcrunch.com/startups/feed/"),
+    ("Crunchbase News",     "https://news.crunchbase.com/feed/"),
+    ("StrictlyVC",          "https://strictlyvc.com/feed/"),
+    ("VentureBeat",         "https://venturebeat.com/feed/"),
+    ("Fortune",             "https://fortune.com/feed/"),
+    ("Business Insider",    "https://feeds.businessinsider.com/custom/all"),
+    ("Reuters Tech",        "https://feeds.reuters.com/reuters/technologyNews"),
 ]
 
 # Quick keyword pre-filter (keeps Claude costs low)
@@ -35,7 +38,7 @@ FUNDING_KEYWORDS = [
 # ── Step 1: Fetch articles from the last 24 h ────────────────────────────────
 
 def fetch_recent_articles() -> list[dict]:
-    cutoff   = datetime.now(timezone.utc) - timedelta(hours=24)
+    cutoff   = datetime.now(timezone.utc) - timedelta(hours=72)
     articles = []
 
     for source_name, url in RSS_FEEDS:
